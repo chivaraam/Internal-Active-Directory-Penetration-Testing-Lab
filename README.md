@@ -9,10 +9,11 @@ and progressing through Active Directory enumeration, Kerberoasting, credential 
 The lab was built entirely in VirtualBox using isolated networking to ensure a safe testing environment.
 
 # Lab Environment
-Machine | Operating System | Purpose
-Kali Linux | Kali Linux | Attacker Machine
-Windows Server 2019 | Domain Controller | Active Directory Server
-Metasploitable2 | Ubuntu Linux | Vulnerable Target
+| Machine | Operating System | Purpose |
+|---|---|---|
+| Kali Linux | Kali Linux | Attacker Machine |
+| Windows Server 2019 | Domain Controller | Active Directory Server |
+| Metasploitable2 | Ubuntu Linux | Vulnerable Target |
 
 
 # Topology
