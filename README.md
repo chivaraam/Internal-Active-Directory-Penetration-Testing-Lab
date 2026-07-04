@@ -9,13 +9,14 @@ and progressing through Active Directory enumeration, Kerberoasting, credential 
 The lab was built entirely in VirtualBox using isolated networking to ensure a safe testing environment.
 
 # Lab Environment
-Machine	            Operating System	          Purpose
-Kali Linux	        Kali Linux	                Attacker Machine
-Windows Server 2019	Domain Controller	          Active Directory Server
-Metasploitable2	    Ubuntu Linux	              Vulnerable Target
+Machine | Operating System | Purpose
+Kali Linux | Kali Linux | Attacker Machine
+Windows Server 2019 | Domain Controller | Active Directory Server
+Metasploitable2 | Ubuntu Linux | Vulnerable Target
 
 
 # Topology
+```
 Host Machine
       │
 VirtualBox Host-Only Network
@@ -23,7 +24,7 @@ VirtualBox Host-Only Network
 ├── Kali Linux          192.168.56.101
 ├── Windows Server 2019 192.168.56.104
 └── Metasploitable2     192.168.56.102
-
+```
 # Security Tools Used
 Nmap
 Metasploit Framework
@@ -70,7 +71,7 @@ A full port and version scan (nmap -sV -sC -p-) identified numerous outdated and
 Evidence: <img width="1920" height="1080" alt="nmap_result_metasploitable2_nse_with_version" src="https://github.com/user-attachments/assets/1d913ae3-0d77-4d80-aa6a-ddffe0b88fc9" />
 
 services with known cve and outdated version are also found through the scan like vsftpd 2.3.4, telnet, ISC BIND 9.4.2, Apache httpd 2.2.8,...etc
-These services are only open because we are scanning an vulnerable machine (metasploitable2). Finding these services to be open in real time is significantly low.
+These services are only open because we are scanning a vulnerable machine (metasploitable2). Finding these services to be open in real time is significantly low.
 
 Finding 3: Account Configured Without Kerberos Pre-Authentication — Medium
 
@@ -110,7 +111,7 @@ Add-ADGroupMember -Identity "Domain Admins" -Members svc_sql.
 <img width="990" height="460" alt="privescpath_svc_sql_as_admin" src="https://github.com/user-attachments/assets/0615a0d8-1e56-41da-b560-8e5a197fb8b1" />
 
 
-Impact: This is the finding that converts a single cracked service account (sony) password into complete domain compromise. A service account cannot be given high privilege access.
+Impact: This is the finding that converts a single cracked service account password into complete domain compromise. Service accounts should never be granted high-privilege access.
 
 Finding 6: Full Domain Controller Compromise Validated — Critical
 
