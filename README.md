@@ -137,3 +137,12 @@ Impact: Complete compromise of the Domain Controller, and by extension the entir
 
 This assessment demonstrated two independent, fully realistic compromise paths using only publicly documented tools and techniques (Nmap, Impacket, BloodHound, CrackMapExec, John the Ripper). Neither path required custom exploit development. The Active Directory compromise in particular illustrates a pattern seen frequently in real-world engagements: a single over-privileged service account with a weak password is often sufficient to convert a standard, low-privilege domain user into full Domain Administrator.
 
+
+## Next Phase
+
+After compromising the Active Directory environment, I implemented a Blue Team detection layer using Wazuh to detect the same attack techniques.
+
+**View the Blue Team project:**
+
+➡️ [Blue Team Detection Lab](https://github.com/chivaraam/Blue-Team-Detection-Lab)
+
